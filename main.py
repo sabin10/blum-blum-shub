@@ -27,8 +27,10 @@ def start_blum_blum_shub(MB):
         x = x * x % M
         last_significant_bit = x % 2  # 1 if odd, 0 if even
         output += str(last_significant_bit)
-    print('Here:\n')
-    print(output)
+    # write to file
+    file = open('output', 'w')
+    file.write(output)
+    file.close()
 
 
 """
@@ -39,7 +41,7 @@ root = Tk()
 root.title('Blum blum shub')
 
 description_label = Label(root, text='Pseudo-random number generator using Blum Blum Shub').pack()
-entry_label = Label(root, text='Enter number of MB for the ').pack()
+entry_label = Label(root, text='Enter number of MB').pack()
 input_string = StringVar(root)
 text_entry = Entry(root, textvariable=input_string).pack()
 
